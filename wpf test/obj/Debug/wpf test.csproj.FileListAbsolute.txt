@@ -1,0 +1,30 @@
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\wpf test.exe.config
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\wpf test.exe
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\wpf test.pdb
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\MainWindow.g.cs
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\App.g.cs
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test_MarkupCompile.cache
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test_MarkupCompile.lref
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\MainWindow.baml
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.g.resources
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf_test.Properties.Resources.resources
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.csproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.exe
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.pdb
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.Asio.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.Core.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.Midi.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.Wasapi.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.WinForms.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.WinMM.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\System.Security.AccessControl.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\NAudio.xml
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Lenovo\source\repos\wpf test\wpf test\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Lenovo\source\repos\wpf test\wpf test\obj\Debug\wpf test.csproj.CopyComplete

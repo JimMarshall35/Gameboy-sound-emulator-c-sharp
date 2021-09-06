@@ -1,0 +1,22 @@
+﻿<Window x:Class="wpf_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="NR10" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,80,0,0" TextChanged="NR10_changed"/>
+        <TextBox x:Name="NR11" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,125,0,0" TextChanged="NR11_changed"/>
+        <TextBox x:Name="NR12" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,163,0,0" TextChanged="NR12_changed"/>
+        <TextBox x:Name="NR13" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,207,0,0" TextChanged="NR13_changed"/>
+        <TextBox x:Name="NR14" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,249,0,0" TextChanged="NR14_changed"/>
+        <Label Content="NR10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0"/>
+        <Label Content="NR11" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,125,0,0"/>
+        <Label Content="NR12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,163,0,0"/>
+        <Label Content="NR13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,207,0,0"/>
+        <Label Content="NR14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,245,0,0"/>
+
+    </Grid>
+</Window>
