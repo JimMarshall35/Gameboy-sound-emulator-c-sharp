@@ -112,7 +112,7 @@ namespace GameBoySound
         private readonly IWavePlayer outputDevice;
         public SoundChip()
         {
-            mixer = new MixingSampleProvider(WaveFormat.CreateIeeeFloatWaveFormat(16000, 1));
+            //mixer = new MixingSampleProvider(WaveFormat.CreateIeeeFloatWaveFormat(16000, 1));
             registers.square1.NR14 = 0;//0b1100_0011;
             registers.square1.NR13 = 0;//255;// 0xbb;
             registers.square1.NR12 = 0;//0xff; //0x73;
