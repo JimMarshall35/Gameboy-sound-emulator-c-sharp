@@ -107,7 +107,8 @@ namespace GameBoySound
     public class SoundChip
     {
         private SoundChipRegisters registers;
-        private Square1 square1;
+        private SquareBase square1;
+        private SquareBase square2;
         private readonly MixingSampleProvider mixer;
         private readonly IWavePlayer outputDevice;
         public SoundChip()
@@ -120,6 +121,14 @@ namespace GameBoySound
             registers.square1.NR10 = 0;//0x15;
             square1 = new Square1(registers.square1);
 
+            registers.square2.NR14 = 0;
+            registers.square2.NR13 = 0;
+            registers.square2.NR12 = 0;
+            registers.square2.NR11 = 0;
+            registers.square2.NR10 = 0;
+            square2 = new SquareBase(registers.square2);
+
+
             outputDevice = new WaveOutEvent();
             mixer = new MixingSampleProvider(WaveFormat.CreateIeeeFloatWaveFormat(16000, 1));
             mixer.ReadFully = true;
@@ -127,6 +136,7 @@ namespace GameBoySound
             outputDevice.Play();
 
             mixer.AddMixerInput(square1);
+            mixer.AddMixerInput(square2);
         }
         private void update(SoundChipChannels channels)
         {

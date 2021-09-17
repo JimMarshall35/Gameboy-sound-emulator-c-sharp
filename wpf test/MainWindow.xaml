@@ -7,16 +7,114 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="NR10" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,80,0,0" TextChanged="NR10_changed"/>
-        <TextBox x:Name="NR11" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,125,0,0" TextChanged="NR11_changed"/>
-        <TextBox x:Name="NR12" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,163,0,0" TextChanged="NR12_changed"/>
-        <TextBox x:Name="NR13" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,207,0,0" TextChanged="NR13_changed"/>
-        <TextBox x:Name="NR14" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="120" Margin="58,249,0,0" TextChanged="NR14_changed"/>
-        <Label Content="NR10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,80,0,0"/>
-        <Label Content="NR11" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,125,0,0"/>
-        <Label Content="NR12" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,163,0,0"/>
-        <Label Content="NR13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,207,0,0"/>
-        <Label Content="NR14" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,245,0,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--<TextBox x:Name="NR10" Grid.Row="1" Grid.Column="2" TextChanged="NR10_changed" Width="120"/>
+        <TextBox x:Name="NR11" Grid.Row="2" Grid.Colu\mn="2" TextChanged="NR11_changed" Width="120"/>
+        <TextBox x:Name="NR12" Grid.Row="3" Grid.Column="2" TextChanged="NR12_changed" Width="120"/>
+        <TextBox x:Name="NR13" Grid.Row="4" Grid.Column="2" TextChanged="NR13_changed" Width="120"/>
+        <TextBox x:Name="NR14" Grid.Row="5" Grid.Column="2" TextChanged="NR14_changed" Width="120"/>-->
+        <WrapPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="NR00" Foreground="#00000000"/>
+            <Label Content="7" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="6" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="5" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="4" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="3" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="2" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="1" Width="30"  Height="30" BorderThickness="2,0,0,2" BorderBrush="Black"/>
+            <Label Content="0" Width="30"  Height="30" BorderThickness="2,0,2,2" BorderBrush="Black" ClipToBounds="True"/>
+
+        </WrapPanel>
+        <!-- NR10 -->
+        <WrapPanel Grid.Row="2" Grid.Column="1">
+            <Label Content="NR10"/>
+            <Label Width="30" ToolTip="Not Used" BorderThickness="0" Background="#FFFFE800" />
+            <TextBox x:Name="channel_1_sweep_period"  Width="90" ToolTip="Sweep Period (0-7)" BorderThickness="2" Background="#FF00FF17" BorderBrush="#FF00FF17" PreviewTextInput="number_preview_3_bit" TextChanged="channel_1_sweep_period_changed" Text="0"/>
+            <Grid Width="30" Background="#FFFFE800">
+                <CheckBox  x:Name="channel_1_sweep_negate" Click="channel_1_sweep_negate_Click" ToolTip="Sweep Direction" BorderThickness="0" Background="#FF00FF17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+            <TextBox x:Name="channel_1_sweep_shift"  Width="90" ToolTip="Sweep shift (0-7)" BorderThickness="2" Foreground="Black" Background="#FF00FF17" BorderBrush="#FF00FF17" PreviewTextInput="number_preview_3_bit" Text="0" TextChanged="channel_1_sweep_shift_changed"/>
+        </WrapPanel>
+
+
+        <!-- NR11 -->
+        <WrapPanel Grid.Row="3" Grid.Column="1">
+            <Label Content="NR11"/>
+            <TextBox x:Name="channel_1_duty" Width="60" ToolTip="Square wave duty (0-3)" BorderThickness="2" Background="#FFFFE800" BorderBrush="#FFFFE800" PreviewTextInput="number_preview_2_bit" Text="0" TextChanged="channel_1_duty_TextChanged"/>
+            <TextBox x:Name="channel_1_length_load" Width="180" ToolTip="Sound length (0-63)" BorderThickness="2" Background="#FF00FF17" BorderBrush="#FF00FF17" PreviewTextInput="number_preview_6_bit" Text="0" TextChanged="channel_1_length_load_TextChanged"/>
+        </WrapPanel>
+
+
+        <!-- NR12 -->
+        <WrapPanel Grid.Row="4" Grid.Column="1">
+            <Label Content="NR12"/>
+            <TextBox x:Name="channel_1_starting_volume" Width="120" ToolTip="Starting volume (0-15)" BorderThickness="2" Background="#FFFFE800" BorderBrush="#FFFFE800" PreviewTextInput="number_preview_4_bit" Text="0" TextChanged="channel_1_starting_volume_TextChanged"/>
+            <Grid Width="30" Background="#FF00FF17">
+                <CheckBox x:Name="channel_1_env_add_mode" ToolTip="Envelope add mode" BorderThickness="0" Background="#FFFFE800" BorderBrush="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Click="channel_1_env_add_mode_Click"/>
+            </Grid>
+
+            <TextBox x:Name="channel_1_env_period"  Width="90" ToolTip="Envelope period (0-7)" BorderThickness="2" Background="#FFFFE800" BorderBrush="#FFFFE800" PreviewTextInput="number_preview_3_bit" Text="0" TextChanged="channel_1_env_period_TextChanged"/>
+        </WrapPanel>
+
+
+        <!-- NR13 -->
+        <WrapPanel Grid.Row="5" Grid.Column="1">
+            <Label Content="NR10"/>
+            <TextBox x:Name="channel_1_frequency" Grid.Row="4" Grid.Column="2" Width="240" ToolTip="Frequency (0-2047) (includes bottom 3 bits of NR10)" BorderThickness="2" Background="#FF00FF17" BorderBrush="#FF00FF17" PreviewTextInput="number_preview_11_bit" Text="0" TextChanged="channel_1_frequency_TextChanged"/>
+        </WrapPanel>
+
+
+        <!-- NR14 -->
+        <WrapPanel Grid.Row="6" Grid.Column="1">
+            <Label Content="NR10"/>
+            <Grid Width="30" Background="#FFFFE800">
+                <CheckBox x:Name="channel_1_trigger" ToolTip="Trigger" BorderThickness="0" Background="#FF00FF17" HorizontalAlignment="Center" VerticalAlignment="Center" Click="channel_1_trigger_Click"/>
+            </Grid>
+            <Grid Width="30" Background="#FF00FF17">
+                <CheckBox x:Name="channel_1_length_enable" BorderThickness="0" ToolTip="Length enable" Background="#FFFFE800" HorizontalAlignment="Center" VerticalAlignment="Center" Click="channel_1_length_enable_Click"/>
+            </Grid>
+
+
+            <Label Width="90" Background="#FFFFE800" ToolTip="Not used"/>
+            <Label Width="90" Background="#FF00FF17" ToolTip="Frequency MSB"/>
+
+        </WrapPanel>
+
+        <TextBox x:Name="NR10" TextChanged="NR10_changed" Grid.Row="2" Grid.Column="2" Width="100" PreviewTextInput="number_preview_8_bit" Text="0"/>
+        <TextBox x:Name="NR11" TextChanged="NR11_changed" Grid.Row="3" Grid.Column="2" Width="100" PreviewTextInput="number_preview_8_bit" Text="0"/>
+        <TextBox x:Name="NR12" TextChanged="NR12_changed" Grid.Row="4" Grid.Column="2" Width="100" PreviewTextInput="number_preview_8_bit" Text="0"/>
+        <TextBox x:Name="NR13" TextChanged="NR13_changed" Grid.Row="5" Grid.Column="2" Width="100" PreviewTextInput="number_preview_8_bit" Text="0"/>
+        <TextBox x:Name="NR14" TextChanged="NR14_changed" Grid.Row="6" Grid.Column="2" Width="100" PreviewTextInput="number_preview_8_bit" Text="0"/>
+
 
     </Grid>
 </Window>
