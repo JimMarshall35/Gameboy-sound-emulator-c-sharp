@@ -87,6 +87,10 @@
     </ApplicationDefinition>
     <Compile Include="sound_chip_emulator\SoundChip.cs" />
     <Compile Include="sound_chip_emulator\SquareChannels.cs" />
+    <Compile Include="sound_chip_emulator\WaveChannel.cs" />
+    <Compile Include="Square1UI.cs" />
+    <Compile Include="Square2UI.cs" />
+    <Compile Include="WaveTablePicker.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -57,6 +57,8 @@ namespace GameBoySound
         public byte NR32;
         public byte NR33;
         public byte NR34;
+        //[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public byte[] wave_table;
     }
     public struct NoiseRegisters 
     {
@@ -90,8 +92,7 @@ namespace GameBoySound
         public byte NR51;
         public byte NR52;
 
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-        public byte[] wave_table; 
+        
 
     }
 
@@ -109,6 +110,7 @@ namespace GameBoySound
         private SoundChipRegisters registers;
         private SquareBase square1;
         private SquareBase square2;
+        private WaveChannel wave;
         private readonly MixingSampleProvider mixer;
         private readonly IWavePlayer outputDevice;
         public SoundChip()
@@ -128,6 +130,14 @@ namespace GameBoySound
             registers.square2.NR10 = 0;
             square2 = new SquareBase(registers.square2);
 
+            registers.wave.wave_table = new byte[16];
+            registers.wave.NR30 = 0;
+            registers.wave.NR31 = 0;
+            registers.wave.NR32 = 0;
+            registers.wave.NR33 = 0;
+            registers.wave.NR34 = 0;
+            wave = new WaveChannel(registers.wave);
+
 
             outputDevice = new WaveOutEvent();
             mixer = new MixingSampleProvider(WaveFormat.CreateIeeeFloatWaveFormat(16000, 1));
@@ -137,6 +147,7 @@ namespace GameBoySound
 
             mixer.AddMixerInput(square1);
             mixer.AddMixerInput(square2);
+            mixer.AddMixerInput(wave);
         }
         private void update(SoundChipChannels channels)
         {
@@ -144,9 +155,18 @@ namespace GameBoySound
             {
                 square1.setFromRegister(registers.square1);
             }
+            if (((int)channels & (int)SoundChipChannels.SQUARE2) != 0)
+            {
+                square2.setFromRegister(registers.square2);
+            }
+            if (((int)channels & (int)SoundChipChannels.WAVE) != 0)
+            {
+                wave.setFromRegister(registers.wave);
+            }
+
         }
         
-
+        // square channel 1
         public void setNR10(byte newval)
         {
             registers.square1.NR10 = newval;
@@ -173,6 +193,34 @@ namespace GameBoySound
             update(SoundChipChannels.SQUARE1);
         }
 
+        // square channel 2
+
+        public void setNR21(byte newval)
+        {
+            registers.square2.NR11 = newval;
+            update(SoundChipChannels.SQUARE2);
+        }
+        public void setNR22(byte newval)
+        {
+            registers.square2.NR12 = newval;
+            update(SoundChipChannels.SQUARE2);
+        }
+        public void setNR23(byte newval)
+        {
+            registers.square2.NR13 = newval;
+            update(SoundChipChannels.SQUARE2);
+        }
+        public void setNR24(byte newval)
+        {
+            registers.square2.NR14 = newval;
+            update(SoundChipChannels.SQUARE2);
+        }
+
+        public void setWaveTable(byte[] wavetable)
+        {
+            registers.wave.wave_table = wavetable;
+            update(SoundChipChannels.WAVE);
+        }
 
     }
 }
